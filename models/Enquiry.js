@@ -27,7 +27,7 @@ const Enquiry = myDb.define("enquiry", {
 
   // Column-4, default values for
   // dates => current time
-  myDate: { type: Sequelize.DATE, defaultValue: Sequelize.NOW },
+  mob: { type: Sequelize.STRING },
 
   // Timestamps
   createdAt: Sequelize.DATE,

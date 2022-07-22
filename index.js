@@ -67,6 +67,21 @@ app.post("/enquiry", (req, res) => {
   if (validRes.isValid) {
     body.created_at = Date();
     updateFile(body, FILES.ENQUIRIES);
+
+    const enq = Enquiry.build({
+      name: body.name,
+      email: body.email,
+      mob: body.mob,
+    });
+    enq
+      .save()
+      .then((data) => {
+        console.log("Data saved");
+      })
+      .catch((err) => {
+        console.log("Error : " + err);
+      });
+
     res.status(200).json({ message: "Enquiry submitted successfully" });
   } else {
     res.status(403).json({ message: validRes.errors });
