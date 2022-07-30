@@ -1,4 +1,3 @@
-import express from "express";
 import { isValidData, PATTERNS } from "../utils/ValidationUtil.js";
 import Enquiry from "../models/Enquiry.js";
 
@@ -61,7 +60,7 @@ export const addEnquiry = async (req, res) => {
         .status(200)
         .json({ message: "Enquiry submitted successfully", enquiry: enq });
     } catch (err) {
-      res.status(200).json({ message: err });
+      res.status(403).json({ message: err });
     }
   } else {
     res.status(403).json({ message: validRes.errors });
