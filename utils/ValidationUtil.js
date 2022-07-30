@@ -7,6 +7,7 @@ export const PATTERNS = {
   FIRST_LAST_NAME: /^[a-zA-Z]+ [a-zA-Z]+$/,
   TEXT_MIN_3: /^[a-zA-Z\s]{3,}$/,
   TEXT: /^[a-zA-Z0-9\s]{1,}$/,
+  LENGTH_MIN_10: /^.{10,}$/,
   ALLPHABETS: /^[a-zA-Z\s]{1,}$/,
   BANK_NAME: /^[a-zA-Z\s-]{9,}$/,
   STATE_NAME: /^[a-zA-Z\s-]{3,}$/,
